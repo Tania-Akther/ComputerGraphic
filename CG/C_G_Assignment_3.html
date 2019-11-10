@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas My</title>
+
+    <style>
+        canvas {
+            border: 1px solid black;
+            /* background: blueviolet; */
+        }
+        
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <canvas id="myCanvas" height="800" width="800"> 
+        
+    </canvas>
+
+    
+    <script >
+    
+    var canvas = document.getElementById('myCanvas');
+
+var ctx = canvas.getContext('2d');
+
+ctx.beginPath();
+// ctx.arc(200, 200, 100, 0, 1.5* Math.PI);
+ ctx.arc(200,200,100,0,2*Math.PI);
+ctx.shadowColor = 'black';
+ ctx.shadowBlur = 15;
+
+ctx.fillStyle='#F2BE22';
+//ctx.stroke();
+ctx.fill();
+ctx.closePath();
+
+
+// Right Eye
+ctx.beginPath();
+ctx.arc(230,170, 30, 0, 2 * Math.PI);
+ctx.lineWidth=1;
+ctx.strokeStyle='black';
+ctx.fillStyle="white";
+ctx.shadowBlur = 0;
+ctx.shadowOffsetX = 0;
+ctx.shadowOffsetY = 0;
+ctx.fill();
+ctx.stroke();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.arc(225,165, 11, 0, 2 * Math.PI);
+ctx.fillStyle="#662113";
+ctx.shadowBlur = 0;
+ctx.shadowOffsetX = 0;
+ctx.shadowOffsetY = 0;
+ctx.fill();
+
+ctx.closePath();
+
+// Left Eye
+ctx.beginPath();
+
+ctx.arc(160,190, 20,0, 2 * Math.PI);
+ctx.fillStyle="white";
+ctx.fill();
+ctx.strokeStyle='black';
+ctx.stroke();
+ctx.closePath();
+
+
+ctx.beginPath();
+ctx.arc(160,197, 8,0, 2 * Math.PI);
+ctx.fillStyle="#662113";
+ctx.fill();
+
+ ctx.closePath();
+
+
+//Mouth
+ctx.beginPath();
+ctx.arc(205, 222, 57, 2*Math.PI, .8*Math.PI);
+ctx.fillStyle="#c1694f";
+ctx.fill();
+ctx.closePath();
+
+
+
+
+ctx.beginPath();
+ctx.arc(217, 266, 25, 1.8*Math.PI, 1*Math.PI);
+ctx.fillStyle="#dd2e44";
+ctx.fill();
+ctx.closePath();
+
+
+//line path
+ctx.beginPath();
+ctx.moveTo(216,260)
+ctx.lineTo(224,290)
+ctx.globalAlpha = .5;
+ctx.strokeStyle='black';
+ctx.stroke();
+ctx.closePath();
+
+
+
+
+//realestic shadeg
+ctx.beginPath();
+ctx.moveTo(216,260)
+ctx.lineTo(224,290)
+ctx.globalAlpha = .5;
+ctx.strokeStyle='black';
+ctx.stroke();
+ctx.closePath();
+    </script>
+    
+
+</body>
+
+</html>

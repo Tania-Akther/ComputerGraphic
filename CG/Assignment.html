@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+ 	   <style type="text/css">
+  		body
+ 		{
+ 			background-color: whitesmoke;
+ 		
+ 		}
+ 	  </style>
+      <meta charset="utf-8"/>
+
+    </head>
+    <body >
+   <canvas id="Canvas" width="1500" height="1500"></canvas>
+   <script>
+     var canvas = document.getElementById("Canvas");
+     var ctx = canvas.getContext('2d');
+     var colorArray = [
+       '#2C3E50',
+       '#E74C3C',
+       '#038C8C',
+       '#3498DB',
+       '#2980B9',
+        ]   
+
+
+      x=60;
+      y=60;
+
+
+
+     //bar
+     f= 330;
+     g=Math.random() + 100;
+
+
+for (var h=0; h<10; h++){
+    ctx.fillRect(f,g,x,y);   // Draw a rectangle with default settings
+  ctx.save();                  // Save the default state
+ 
+ // ctx.fillStyle = '#09F';      // Make changes to the settings
+ ctx.fillStyle = colorArray[Math.floor(Math.random() * colorArray.length)];
+  ctx.fillRect(f+10, g+10, x-20,y-20); // Draw a rectangle with new settings
+
+  ctx.save();                  // Save the current state
+  ctx.fillStyle = '#FFF';      // Make changes to the settings
+  ctx.globalAlpha = 0.5; 
+  ctx.fillRect(f+20, g+20,x-35,y-35);   // Draw a rectangle with new settings
+
+  ctx.restore();               // Restore previous state
+  ctx.fillRect(f+30, g+30, x-50,y-50);   // Draw a rectangle with restored settings
+
+  ctx.restore();               // Restore original state
+  ctx.fillRect(f+40, g+40, x-60,y-60);   // Draw a rectangle with restored settings
+
+            g += 60;
+
+}
+
+
+//second bar
+f= 45;
+g=Math.random() + 100;
+
+
+for (var h=0; h<11; h++){
+
+    ctx.fillRect(f,g,x,y);   // Draw a rectangle with default settings
+  ctx.save();                  // Save the default state
+ 
+ // ctx.fillStyle = '#09F';      // Make changes to the settings
+ ctx.fillStyle = colorArray[Math.floor(Math.random() * colorArray.length)];
+  ctx.fillRect(f+10, g+10, x-20,y-20); // Draw a rectangle with new settings
+
+  ctx.save();                  // Save the current state
+  ctx.fillStyle = '#FFF';      // Make changes to the settings
+  ctx.globalAlpha = 0.5; 
+  ctx.fillRect(f+20, g+20,x-35,y-35);   // Draw a rectangle with new settings
+
+  ctx.restore();               // Restore previous state
+  ctx.fillRect(f+30, g+30, x-50,y-50);   // Draw a rectangle with restored settings
+
+  ctx.restore();               // Restore original state
+  ctx.fillRect(f+40, g+40, x-60,y-60);   // Draw a rectangle with restored settings
+
+            f += 60;
+}
+  </script>
+ </body>
+</html>
